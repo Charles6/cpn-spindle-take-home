@@ -1,0 +1,180 @@
+{
+    "database":[
+        {
+            "region":"Americas",
+            "product": "Mobile",
+            "year": 2023,
+            "scenario": "A",
+            "metric": {
+                "sales": 100,
+                "cost": 60,
+                "profit": 40
+            }
+        },
+        {
+            "region":"Americas",
+            "product": "Mobile",
+            "year": 2023,
+            "scenario": "B",
+            "metric": {
+                "sales": 80,
+                "cost": 48,
+                "profit": 32
+            }
+        },
+        {
+            "region":"Americas",
+            "product": "Mobile",
+            "year": 2024,
+            "scenario": "A",
+            "metric": {
+                "sales": 110,
+                "cost": 66,
+                "profit": 44
+            }
+        },
+        {
+            "region":"Americas",
+            "product": "Mobile",
+            "year": 2024,
+            "scenario": "B",
+            "metric": {
+                "sales": 88,
+                "cost": 52.8,
+                "profit": 35.2
+            }
+        },
+        {
+            "region":"Americas",
+            "product": "Web",
+            "year": 2023,
+            "scenario": "A",
+            "metric": {
+                "sales": 250,
+                "cost": 190,
+                "profit": 60
+            }
+        },
+        {
+            "region":"Americas",
+            "product": "Web",
+            "year": 2023,
+            "scenario": "B",
+            "metric": {
+                "sales": 200,
+                "cost": 152,
+                "profit": 48
+            }
+        },
+        {
+            "region":"Americas",
+            "product": "Web",
+            "year": 2024,
+            "scenario": "A",
+            "metric": {
+                "sales": 325,
+                "cost": 247,
+                "profit": 78
+            }
+        },
+        {
+            "region":"Americas",
+            "product": "Web",
+            "year": 2024,
+            "scenario": "B",
+            "metric": {
+                "sales": 260,
+                "cost": 197.6,
+                "profit": 62.4
+            }
+        },
+        {
+            "region":"Europe",
+            "product": "Mobile",
+            "year": 2023,
+            "scenario": "A",
+            "metric": {
+                "sales": 80,
+                "cost": 50,
+                "profit": 30
+            }
+        },
+        {
+            "region":"Europe",
+            "product": "Mobile",
+            "year": 2023,
+            "scenario": "B",
+            "metric": {
+                "sales": 64,
+                "cost": 40,
+                "profit": 24
+            }
+        },
+        {
+            "region":"Europe",
+            "product": "Mobile",
+            "year": 2024,
+            "scenario": "A",
+            "metric": {
+                "sales": 110,
+                "cost": 68.75,
+                "profit": 41.25
+            }
+        },
+        {
+            "region":"Europe",
+            "product": "Mobile",
+            "year": 2024,
+            "scenario": "B",
+            "metric": {
+                "sales": 88,
+                "cost": 55,
+                "profit": 33
+            }
+        },
+        {
+            "region":"Europe",
+            "product": "Web",
+            "year": 2023,
+            "scenario": "A",
+            "metric": {
+                "sales": 190,
+                "cost": 150,
+                "profit": 40
+            }
+        },
+        {
+            "region":"Europe",
+            "product": "Web",
+            "year": 2023,
+            "scenario": "B",
+            "metric": {
+                "sales": 152,
+                "cost": 120,
+                "profit": 32
+            }
+        },
+        {
+            "region":"Europe",
+            "product": "Web",
+            "year": 2024,
+            "scenario": "A",
+            "metric": {
+                "sales": 237.5,
+                "cost": 187.5,
+                "profit": 50
+            }
+        },
+        {
+            "region":"Europe",
+            "product": "Web",
+            "year": 2024,
+            "scenario": "B",
+            "metric": {
+                "sales": 190,
+                "cost": 150,
+                "profit": 40
+            }
+        }
+    ]
+}
