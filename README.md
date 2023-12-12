@@ -1,8 +1,14 @@
 # Take Home for Charles Nguyen for Spindle
 
-Run the mock database server.
-json-server --watch data.json --port 3030
+I have set up a mock server to simulate a proper front end fetching the data.
 
+```
+json-server --watch data.json --port 3030
+```
+To run the front-end simply run this command.
+```
+yarn dev
+```
 
 
 # React + TypeScript + Vite
