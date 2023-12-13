@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from "@emotion/styled";
 import { groupBy, sumArray } from '../utils/utils';
+import { BuildTable } from '../utils/tableCalc';
 
 const TableContainer = styled.table`
   width: 80rem;
@@ -22,7 +23,7 @@ const MetricsContainer = styled.div`
   };
 `;
 
-const Table = ({
+const TableComponent = ({
   rowVar,
   columnVar,
   tableData,
@@ -31,20 +32,24 @@ const Table = ({
   rowList,
   setRowList,
   columnList,
-  setColumnList
+  setColumnList,
+  rowHeaders
 }) => {
   // const [rowList, setRowList] = useState<string[]>([]);
   // const [columnList, setColumnList] = useState<string[]>([]);
   const [tableValues, setTableValues] = useState([]);
   const [renderedTable, setRenderedTable] = useState([]);
 
-  useEffect(()=>{
-    console.log("table render", tableData)
-  },[tableData]);
+  return (
+    <table>
+      <thead>
 
-  useEffect(()=>{
-    console.log("columnVar updated", columnVar)
-  },[columnVar])
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  )
 
   // useEffect(()=>{
   //   if(rowList.length > 0){
@@ -177,6 +182,6 @@ const Table = ({
   // );
 };
 
-export default Table;
+export default TableComponent;
 
 
