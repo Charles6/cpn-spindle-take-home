@@ -9,14 +9,9 @@ export const BuildTable = (
   columnList: string[][],
   outputVar: string[]
 ):DataProps[][] => {
-
-  // let recursionOutput:DataProps[][] = [];
-  // let finalOutput:DataProps[][][] = [];
-
   let outputNoCols:DataProps[][] = [];
   let outputWithCols:DataProps[][][] = [];
   
-
   const recursionGen = (
     arr:any[],
     limit:number,
@@ -85,7 +80,6 @@ export const BuildTable = (
   const columnSplit = () => {
     if (outputNoCols.length > 0) {
       columnRecursion(outputNoCols,columnVar.length);
-      //console.log("testing for columns", outputWithCols);
     }
   }
 
@@ -96,17 +90,9 @@ export const BuildTable = (
     columnSplit();
   };
   
-
-  
-
-
-  
-
-
   if(columnVar.length > 0){
     return outputWithCols;
   } else {
     return outputNoCols;
   }
-  // return recursionOutput;
 }

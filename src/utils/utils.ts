@@ -38,4 +38,3 @@ export const isObjectEmpty = (objectName) => {
 
 
 export const sumArray = (r, a) => r.map((b, i) => a[i] + b);
-

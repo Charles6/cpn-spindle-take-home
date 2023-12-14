@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import styled from '@emotion/styled';
 import Drag from './components/drag';
 import TableComponent from './components/table';
 import { DataProps,removeFromList, findValues } from './utils/utils';
@@ -40,28 +39,6 @@ function App() {
 
   useEffect(() => getData(), []);
 
-  // useEffect(()=>{
-  //   console.log(
-  //     "app updated => key:",
-  //     keyVar,
-  //     "row:",
-  //     rowVar,
-  //     "column:",
-  //     columnVar,
-  //     "output:",
-  //     outputVar
-  //   )
-  // },[keyVar,columnList,rowVar,outputVar]);
-
-  // useEffect(()=>{
-  //   console.log(
-  //     "app lists updated => row:",
-  //     rowList,
-  //     "column:",
-  //     columnList
-  //   )
-  // },[rowList, columnList]);
-
   useEffect(()=>{
     let tempColumnList:string[] = [];
     columnVar.map((col:string)=>{
@@ -86,11 +63,6 @@ function App() {
     rowList,
     columnList
   ])
-  
-
-  // useEffect(()=>{
-  //   console.log("Charles tabledata updated", tableData)
-  // },[tableData])
 
   return (
     <>
@@ -118,6 +90,11 @@ function App() {
       {tableData && 
         <TableComponent
           tableData={tableData}
+          rowVar={rowVar}
+          rowList={rowList}
+          columnVar={columnVar}
+          columnList={columnList}
+          outputVar={outputVar}
         />
       }
       </Drag>

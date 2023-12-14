@@ -53,8 +53,8 @@ const OutputCheckbox = styled.div`
   padding: 1rem;
   max-width: fit-content;
   border-radius: 6px;
-  background-color: #4f75cb;
-  color: white;
+  background-color: ${props=>props.selected?'#4f75cb':'lightgrey'};
+  color: ${props=>props.selected?'white':'black'};
   &:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   };
@@ -209,7 +209,7 @@ const Drag = ({
   return (
     <>
     <Header>
-      <h4>Drag the variables below to either the row or column to create pivot table</h4>
+      <h4>Drag the variables below to either the row or column to create pivot table, then click on the outputs you want to see the data.</h4>
       <Variables
         onDrop={() => handleOnDrop("key")}
         onDragOver={handleDragOver}
@@ -275,7 +275,9 @@ const Drag = ({
         <h3>Output</h3>
         <OutputSelect>
           {(data.length > 0) && Object.keys(data[0].metric).map((varOutput, index:number)=>(
-            <OutputCheckbox>
+            <OutputCheckbox
+              selected={outputVar.includes(varOutput)}
+            >
               <label>
                 {varOutput}
                 <input
