@@ -9,6 +9,13 @@ To run the front-end simply run this command.
 ```
 yarn dev
 ```
+
+## Loom link
+
+Here is a link to the loom video explaining how to set it up and how the application works.
+
+https://www.loom.com/share/d9757c896af84440a4abb8087ad4b439?sid=ecdcbf8a-5b24-4654-9f23-9dfe1fab8df1
+
 ## Notable Features
 
 I have tried to make the drag and drop features to be as seamless as possible. I wasn't sure if the output data should also be drag and drop, and opted to make them checkboxes as that makes more sense to me.
