@@ -1,5 +1,8 @@
 # Take Home for Charles Nguyen for Spindle
 
+### (Original instructions [here](https://spindle.notion.site/Take-Home-Challenge-The-Drag-n-Drop-Multi-Pivot-Table-0ba1957eabcf418cad6e4da866fc5fa7?pvs=4))
+
+
 I have set up a mock server to simulate a proper front end fetching the data.
 
 ```
