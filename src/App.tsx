@@ -21,7 +21,7 @@ function App() {
 
   const [rowHeaders, setRowHeaders] = useState<string[]>([]);
 
-  const [tableData, setTableData] = useState<DataProps[]>([]);
+  const [tableData, setTableData] = useState<DataProps[][]>([]);
 
   const getData = () => {
     fetch("http://localhost:3030/database", {
@@ -40,27 +40,27 @@ function App() {
 
   useEffect(() => getData(), []);
 
-  useEffect(()=>{
-    console.log(
-      "app updated => key:",
-      keyVar,
-      "row:",
-      rowVar,
-      "column:",
-      columnVar,
-      "output:",
-      outputVar
-    )
-  },[keyVar,columnList,rowVar,outputVar]);
+  // useEffect(()=>{
+  //   console.log(
+  //     "app updated => key:",
+  //     keyVar,
+  //     "row:",
+  //     rowVar,
+  //     "column:",
+  //     columnVar,
+  //     "output:",
+  //     outputVar
+  //   )
+  // },[keyVar,columnList,rowVar,outputVar]);
 
-  useEffect(()=>{
-    console.log(
-      "app lists updated => row:",
-      rowList,
-      "column:",
-      columnList
-    )
-  },[rowList, columnList]);
+  // useEffect(()=>{
+  //   console.log(
+  //     "app lists updated => row:",
+  //     rowList,
+  //     "column:",
+  //     columnList
+  //   )
+  // },[rowList, columnList]);
 
   useEffect(()=>{
     let tempColumnList:string[] = [];
@@ -79,13 +79,8 @@ function App() {
   },[rowVar])
 
   useEffect(()=>{
-    // if(rowVar.length===0){
-    //   setTableData(data)
-    // } else {
-    //   setTableData(BuildTable(tableData,rowVar,columnVar,rowList,columnList));
-    // }
     if(rowList.length>0){
-      setTableData(BuildTable(data,rowVar,columnVar,rowList,columnList))
+      setTableData(BuildTable(data,rowVar,columnVar,rowList,columnList,outputVar))
     }
   },[
     rowList,
@@ -93,9 +88,9 @@ function App() {
   ])
   
 
-  useEffect(()=>{
-    console.log("Charles tabledata updated", tableData)
-  },[tableData])
+  // useEffect(()=>{
+  //   console.log("Charles tabledata updated", tableData)
+  // },[tableData])
 
   return (
     <>
@@ -122,12 +117,7 @@ function App() {
       >
       {tableData && 
         <TableComponent
-          columnVar={columnVar}
-          rowVar={rowVar}
           tableData={tableData}
-          columnValues={columnValues}
-          outputVar={outputVar}
-          rowHeaders={rowHeaders}
         />
       }
       </Drag>
