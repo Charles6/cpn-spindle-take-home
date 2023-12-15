@@ -28,6 +28,7 @@ const TableComponent = ({
   const [tableValues, setTableValues] = useState([]);
   const [renderedTable, setRenderedTable] = useState([]);
   const [metricTitles, setMetricTitles] = useState([]);
+  const [columnLabel, setColumnLabel] = useState([]);
 
 const sumCell = (arr:DataProps[]) => {
   let cellTotal = {}
@@ -91,9 +92,9 @@ useEffect(()=>{
 
  useEffect(()=>{
   if(columnVar.length > 0){
-    let interate = 0;
+    let interate = 1;
     for(let i=0; i<columnVar.length; i++){
-      interate = interate + columnList[i].length
+      interate = interate * columnList[i].length
     }
     let loadMetrics = []
     for(let j=0; j<interate; j++){
@@ -106,14 +107,71 @@ useEffect(()=>{
 
  },[outputVar,columnList])
 
+ useEffect(()=>{
+  if(columnVar.length>0){
+    let tempColumnLabel = []
+    let tempColRow = []
+    columnVar.map((col,index)=>{
+      let back = columnVar.length - index - 1;
+      let revPower = Math.pow(columnList[index].length,back)
+      let power = Math.pow(columnList[index].length,index)
+      console.log(col, columnList[index], revPower, power);
+      for(let i=0;i<power;i++){
+        tempColRow.push({
+          'labels':columnList[index],
+          'width': revPower,
+        })
+        
+      }
+      tempColumnLabel.push(tempColRow)
+      tempColRow=[];
+    })
+
+    setColumnLabel(tempColumnLabel);
+   }
+
+ },[columnList])
+
+//  useEffect(()=>{
+//   console.log(columnLabel)
+//  },[columnLabel])
+
+
   return (
     <TableContainer>
       <thead>
+        {
+          (columnLabel.length > 0) && columnLabel.map((colLab,index)=>{
+            //console.log("Charles test", colLab,)
+            return (
+              <tr>
+                <th colSpan={rowVar.length}>{columnVar[index]}</th>
+                {colLab.map(col=>{
+                  //console.log("col", col, col.labels);
+                  return (
+                    <>
+                      {col.labels.map(colLabel=>{
+                        return (
+                          <th colSpan={col.width * outputVar.length}>{colLabel}</th>
+                        )
+                      })
+
+                      }
+                    </>
+                  )
+                })
+
+                }
+              </tr>
+            )
+          })
+        }
         <tr>
           {rowVar.length > 0 && rowVar.map(rowTitle=>(
               <th rowSpan={2}>{rowTitle}</th>
           ))}
-          {
+          {}
+          {/* {
             columnList.map(colMetric=>{
               return (<>
               {
@@ -123,7 +181,7 @@ useEffect(()=>{
               }
               </>)
             })
-          }
+          } */}
         </tr>
         <tr>
           {metricTitles.length > 0 && metricTitles.map(metric=>{
