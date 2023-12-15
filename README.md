@@ -1,10 +1,10 @@
 # Take Home for Charles Nguyen for Spindle
 
-### (Original instructions [here](https://spindle.notion.site/Take-Home-Challenge-The-Drag-n-Drop-Multi-Pivot-Table-0ba1957eabcf418cad6e4da866fc5fa7?pvs=4))
+### [Here is a Loom video](https://www.loom.com/share/d9757c896af84440a4abb8087ad4b439?sid=ecdcbf8a-5b24-4654-9f23-9dfe1fab8df1) explaining how to set it up and how the application works. Original prompt [here](https://spindle.notion.site/Take-Home-Challenge-The-Drag-n-Drop-Multi-Pivot-Table-0ba1957eabcf418cad6e4da866fc5fa7?pvs=4).
 
+## Setup
 
 I have set up a mock server to simulate a proper front end fetching the data.
-
 ```
 json-server --watch data.json --port 3030
 ```
@@ -12,12 +12,6 @@ To run the front-end simply run this command.
 ```
 yarn dev
 ```
-
-## Loom link
-
-Here is a link to the loom video explaining how to set it up and how the application works.
-
-https://www.loom.com/share/d9757c896af84440a4abb8087ad4b439?sid=ecdcbf8a-5b24-4654-9f23-9dfe1fab8df1
 
 ## Notable Features
 
